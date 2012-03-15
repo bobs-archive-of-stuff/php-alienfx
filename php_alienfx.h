@@ -43,6 +43,7 @@ PHP_FUNCTION(alienfx_get_num_devices);
 static zend_function_entry alienfx_functions[] = {
 	PHP_FE(alienfx_initialize, NULL)
 	PHP_FE(alienfx_release, NULL)
+	PHP_FE(alienfx_reset, NULL)
 	PHP_FE(alienfx_update, NULL)
 	PHP_FE(alienfx_update_default, NULL)
 	PHP_FE(alienfx_get_num_devices, NULL)
