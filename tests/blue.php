@@ -22,7 +22,7 @@ for($DeviceID = 0; $DeviceID < $DeviceCount; $DeviceID++) {
 	alienfx_update();
 
 	echo 'Sleeping so you can see...', PHP_EOL;
-	sleep(3);
+	sleep(10);
 }
 
 echo 'Releasing AlienFX...', PHP_EOL;

@@ -152,3 +152,36 @@ PHP_FUNCTION(alienfx_light) {
 	status = LFX_Light(location,color);
 	RETURN_LONG(status*-1);
 }
+
+/*
+PHP_FUNCTION(alienfx_set_light_action_color) {
+	unsigned int status;
+	long device, light;
+	long red1, green1, blue1, brightness1;
+	long red2, green2, blue2, brightness2;
+	unsigned int action;
+	LFX_COLOR color1, color2;
+
+	zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "lllllllllll",
+		&device, &light, &action,
+		&red1, &green1, &blue1, &brightness1,
+		&red2, &green2, &blue2, &brightness2
+	);
+
+	color1.red = red1;
+	color1.green = green1;
+	color1.blue = blue1;
+	color1.brightness = brightness1;
+
+	color2.red = red2;
+	color2.green = green2;
+	color2.blue = blue2;
+	color2.brightness = brightness2;
+
+	// this function is currently unusable, it is unlinkable or i need alienware
+	// to provide a working .lib instead of me making one.
+	status = LFX_SetLightActionColorEx(device,light,action,&color1,&color2);
+	RETURN_LONG(status*-1);
+}
+*/
+

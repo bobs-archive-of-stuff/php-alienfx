@@ -117,6 +117,7 @@ PHP_FUNCTION(alienfx_get_light);
 PHP_FUNCTION(alienfx_get_light_position);
 PHP_FUNCTION(alienfx_get_light_color);
 PHP_FUNCTION(alienfx_set_light_color);
+//PHP_FUNCTION(alienfx_set_light_action_color);
 PHP_FUNCTION(alienfx_light);
 
 static zend_function_entry alienfx_functions[] = {
@@ -132,6 +133,7 @@ static zend_function_entry alienfx_functions[] = {
 	PHP_FE(alienfx_get_light_position, NULL)
 	PHP_FE(alienfx_get_light_color, NULL)
 	PHP_FE(alienfx_set_light_color, NULL)
+//	PHP_FE(alienfx_set_light_action_color, NULL)
 	PHP_FE(alienfx_light, NULL)
 	PHP_FE_END
 };
