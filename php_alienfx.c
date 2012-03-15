@@ -12,11 +12,19 @@ PHP_MINIT_FUNCTION(alienfx) {
 		item = alienfx_constants[a];
 		if(item.name == NULL) break;
 
-		REGISTER_LONG_CONSTANT(
-			item.name,
+		// php_printf("%s\n",item.name);
+
+		zend_register_long_constant(
+			item.name, (strlen(item.name)+1),
 			item.value,
-			(CONST_CS | CONST_PERSISTENT)
+			CONST_CS | CONST_PERSISTENT,
+			module_number TSRMLS_CC
 		);
+
+		// random interesting note.
+		// in geoipo (which i have only tested on unixen) i never had to do the
+		// +1 to strlen. not sure what is up with that.
+
 	}
 
 	return SUCCESS;
