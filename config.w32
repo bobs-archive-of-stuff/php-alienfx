@@ -1,0 +1,17 @@
+// fuuuuuuuuuuuuuuu
+PHP_PGI="no"
+PHP_PGO="no"
+
+// --with-alienfx="path-to-it"
+ARG_WITH("alienfx", "Alienware AlienFX support", "no");
+
+if (PHP_ALIENFX != "no") {
+	if(CHECK_LIB("LightFX.lib", "alienfx", PHP_ALIENFX + "\\dll\\x86")) {
+		EXTENSION("alienfx", "php_alienfx.c");
+		CHECK_HEADER_ADD_INCLUDE("LFX2.h", "CFLAGS_ALIENFX", PHP_ALIENFX + "\\includes")
+		ADD_SOURCES(configure_module_dirname, "func_alienfx.c", "alienfx");
+		AC_DEFINE("HAVE_ALIENFX", 1, "AlienFX support");
+	} else {
+		WARNING("AlienFX not enabled; libraries not found");
+	}
+}
